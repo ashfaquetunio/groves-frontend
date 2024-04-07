@@ -32,6 +32,44 @@ export const slider1Data = [
         title: 'Lucaworld'
     },
 ]
+export const slider2Data = [
+    {
+        image: '/images/home/slide-2.png',
+        title: 'Resturants'
+    },
+    {
+        image: '/images/home/slide-5.png',
+        title: 'Experiences'
+    },
+    {
+        image: '/images/home/slide-6.png',
+        title: 'Events'
+    },
+    {
+        image: '/images/home/slide-2.png',
+        title: 'Resturants'
+    },
+    {
+        image: '/images/home/slide-5.png',
+        title: 'Experiences'
+    },
+    {
+        image: '/images/home/slide-6.png',
+        title: 'Events'
+    },
+    {
+        image: '/images/home/slide-2.png',
+        title: 'Resturants'
+    },
+    {
+        image: '/images/home/slide-5.png',
+        title: 'Experiences'
+    },
+    {
+        image: '/images/home/slide-6.png',
+        title: 'Events'
+    },
+]
 
 export const movies = [
     {
@@ -45,12 +83,10 @@ export const countries = [
     {
       code: "gb",
       language: "English",
-      languageIso: "urd"
     },
     {
       code: "sa",
       language: "arabic",
-      languageIso: 'ar'
     },
   ]
   

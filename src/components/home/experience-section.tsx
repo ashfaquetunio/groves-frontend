@@ -5,7 +5,7 @@ import FeatureCard from './molecules/feature-card'
 import Container from '@/ui/container'
 import SectionTitle from '@/components/ui/typography/section-title'
 import Button from '@/ui/button'
-import { slider1Data } from '@/assets/data'
+import { slider2Data } from '@/assets/data'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
 const ExperienceSection = () => {
@@ -20,11 +20,13 @@ const ExperienceSection = () => {
                     spaceBetween={20}
                     slidesPerView='auto'
                     className='w-[120%] sm:min-w-[200%]'
+                    speed={700}
                     loop
                 >{
-                        slider1Data.map((item, idx) => (
-                            <SwiperSlide key={idx} className={`${(idx + 1) % 4 === 0 ? "sm:w-[12%]" : (idx + 1) % 2 === 0 ? "sm:w-[10%]" : "sm:w-[16%]"} w-3/5 xs:w-2/5 sm:my-auto`}><FeatureCard data={item} /></SwiperSlide>
-                        ))
+                        slider2Data.map((item, idx) => {
+                            const number = (idx + 1) % 4
+                            return <SwiperSlide key={idx} className={`${number  === 3 ? "sm:w-[12%]" : (number === 2 || number === 0) ? "sm:w-[16%]" : "sm:w-[10%]"} w-3/5 xs:w-2/5 sm:my-auto`}><FeatureCard data={item} /></SwiperSlide>
+                        })
                     }
                 </Swiper>
             </Container>

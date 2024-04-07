@@ -8,7 +8,7 @@ import NavigationSection from "@/components/home/navigation-section";
 
 export default function Home() {
   return (
-    <main className="min-w-0 -mt-[100px] lg:-mt-[150px]">
+    <main className="min-w-0 -mt-[110px] lg:-mt-[150px]">
       <Hero />
       <AboutSection />
       <BookTicketSection />

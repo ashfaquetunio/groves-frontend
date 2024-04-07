@@ -37,7 +37,7 @@ const Button = ({
       disabled={isDisabled}
       aria-busy={status === "loading"}
       className={twMerge(
-        "px-6 py-3 font-clash relative text-base whitespace-nowrap duration-200 hover:scale-[1.025] min-w-[142px] font-medium",
+        "px-6 py-3 font-clash relative text-base whitespace-nowrap duration-200 min-w-[142px] font-medium",
         variants[variant],
         className,
         statusStyles[status]

@@ -19,7 +19,7 @@ const BookTicketSection = () => {
                     spaceBetween={20}
                     slidesPerView='auto'
                     className='w-[120%] sm:w-[200%]'
-                    speed={800}
+                    speed={700}
                     loop
                     autoplay
                 >{
