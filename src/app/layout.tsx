@@ -8,6 +8,7 @@ import SmoothScroll from "@/components/animation/smooth-scroll";
 import { inter } from "@/assets/styles/fonts";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import GlobalContextProvider from "@/context/GlobalContext";
 
 export const metadata: Metadata = {
   title: "Groves",
@@ -24,9 +25,11 @@ export default function RootLayout({
       <body className={twMerge(inter.className, "bg-gradient-to-br from-[#283606] to-[#0F1500] text-white")}>
         <div id="groves-video-player"></div>
         <SmoothScroll />
-        <Header />
-        {children}
-        <Footer />
+        <GlobalContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </GlobalContextProvider>
       </body>
     </html>
   );

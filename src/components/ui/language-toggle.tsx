@@ -2,15 +2,16 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { FaCheck, FaChevronDown } from 'react-icons/fa'
 import { countries } from '@/assets/data'
+import { useGlobalContext } from '@/context/GlobalContext'
 
 
 
-const Select = () => {
-    const [selected, setSelected] = useState(countries[0])
+const LanguageToggle = () => {
+    const { country, setCountry } = useGlobalContext()
 
     return (
         <div >
-            <Listbox value={selected} onChange={setSelected}>
+            <Listbox value={country} onChange={setCountry}>
                 <div className="relative z-30 text-white">
                     <Listbox.Button className="relative text-lg w-full lg:min-w-[120px] cursor-pointer flex justify-between items-center gap-1 lg:gap-2 rounded-lg  py-2 text-left sm:text-sm">
                         <span className="pointer-events-none flex items-center">
@@ -20,9 +21,9 @@ const Select = () => {
                             />
                         </span>
                         <span className='text-2xl mr-1 rounded-lg overflow-hidden'>
-                            <span className={"fi fi-" + selected.code}></span>
+                            <span className={"fi fi-" + country?.code}></span>
                         </span>
-                        <span className="capitalize text-sm lg:text-base">{selected.language}</span>
+                        <span className="capitalize text-sm lg:text-base">{country?.language}</span>
 
                     </Listbox.Button>
                     <Transition
@@ -41,19 +42,17 @@ const Select = () => {
                                     }
                                     value={country}
                                 >
-                                    {({ selected }) => (
-                                        <>
-                                            <span
-                                                className={`block capitalize text-xs sm:text-sm lg:text-base ${selected ? 'font-medium' : 'font-normal'
-                                                    }`}
-                                            >
-                                                {country.language}
-                                            </span>
-                                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                                                <span className={"fi fi-" + country.code}></span>
-                                            </span>
-                                        </>
-                                    )}
+                                    <>
+                                        <span
+                                            className={`block capitalize text-xs sm:text-sm lg:text-base ${country ? 'font-medium' : 'font-normal'
+                                                }`}
+                                        >
+                                            {country?.language}
+                                        </span>
+                                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                                            <span className={"fi fi-" + country?.code}></span>
+                                        </span>
+                                    </>
                                 </Listbox.Option>
                             ))}
                         </Listbox.Options>
@@ -65,4 +64,4 @@ const Select = () => {
 }
 
 
-export default Select
+export default LanguageToggle

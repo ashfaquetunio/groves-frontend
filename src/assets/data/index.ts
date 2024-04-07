@@ -83,10 +83,12 @@ export const countries = [
     {
       code: "gb",
       language: "English",
+      langCode: 'en'
     },
     {
       code: "sa",
       language: "arabic",
+      langCode: 'ar'
     },
   ]
   

@@ -6,11 +6,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Container from "@/ui/container";
 import Button from "@/ui/button";
-import Select from "@/ui/select";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Socials from "./atoms/socials";
 import { containerVars, menuVars, mobileLinkVars } from "@/assets/data/animation";
 import Label from "./ui/typography/label";
+import LanguageToggle from "./ui/language-toggle";
 
 const navLinks = [
   { title: "dine with us", href: "/" },
@@ -55,7 +55,7 @@ const Header = () => {
               </> : <>
                 <Socials />
                 <Button className="hidden sm:block">Log in</Button>
-                <Select />
+                <LanguageToggle />
               </>
             }
 
@@ -122,7 +122,7 @@ const Header = () => {
                 })}
                 <motion.div variants={mobileLinkVars} className="py-4 flex-1 border-t border-white/50">
                   <Container className="flex flex-col items-start gap-4 h-full">
-                    <Select />
+                    <LanguageToggle />
                     <Button>Log in</Button>
                   </Container>
                 </motion.div>
